@@ -75,6 +75,10 @@ function addItemToList(value) {
   // setting the content of the elment to value
   // <span class="task-content">value</span>
   taskContent.innerText = value;
+  // setting the contenteditable attribute to true so that
+  // we can edit our todo items
+  // <span class="task-content" contenteditable="true">value</span>
+  taskContent.contentEditable = true;
 
   // creating a button and assigning it to a variable called deleteButton
   // <button></button>
