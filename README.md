@@ -1,5 +1,18 @@
 # Todo List Application
 
+## the objectification of the todo list app
+
+List object:
+name: String // name of the list
+items: Array of listItems // the items in the list
+
+ListItem object:
+ID: string or number // a unique identifier for the list
+value: String // the words that consist the item
+isCompleted: boolean // has the item been completed? true/false
+isDeleted: boolean // has the item been deleted? true/false
+
+
 This is a simple todo list application that allows you to add and manage tasks.
 You can create, mark as completed, and delete tasks using this application.
 

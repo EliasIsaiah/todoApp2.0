@@ -1,3 +1,11 @@
+// initialize our objects
+let id = 0;
+let listState = {
+  name: "",
+  items: [],
+};
+
+
 /* add event listener to the Add button that will listen for a click
    when clicked, add the item to the list
 */
@@ -31,6 +39,23 @@ document
   });
 
 function addItemToList(value) {
+  // initialize our list item object values
+  // increment ID after we use it so that the next list item has
+  // an ID different from the previous
+  let isCompleted = false;
+  let isDeleted = false;
+  
+  // build our listItem object to add to our list state
+  let listItem = {
+    id,
+    value,
+    isCompleted,
+    isDeleted
+  }
+
+  listState.items.push(listItem);
+
+  id++;
   // selects the list and assigns it to a variable called list
   // <ul id="list"></ul>
   let list = document.getElementById("list");
