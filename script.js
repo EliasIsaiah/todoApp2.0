@@ -1,5 +1,5 @@
 // initialize our objects
-let id = 0;
+let id = "";
 let listState = {
   name: "",
   items: [],
@@ -44,18 +44,9 @@ function addItemToList(value) {
   // an ID different from the previous
   let isCompleted = false;
   let isDeleted = false;
-  
+  let dueDate = "";
+
   // build our listItem object to add to our list state
-  let listItem = {
-    id,
-    value,
-    isCompleted,
-    isDeleted
-  }
-
-  listState.items.push(listItem);
-
-  id++;
   // selects the list and assigns it to a variable called list
   // <ul id="list"></ul>
   let list = document.getElementById("list");
@@ -79,6 +70,12 @@ function addItemToList(value) {
   // add the type "checkbox" to the element
   // <input class="checkbox" type="checkbox" />
   checkbox.type = "checkbox";
+
+  // create an input for a datepicker
+  let datePicker = document.createElement("input");
+  datePicker.classList.add("datePicker");
+  // give the datePicker type "date"
+  datePicker.type = "date";
 
   // add event listener that listens for a change
   // make the checkbox work by adding or removing a line through the task
@@ -140,6 +137,9 @@ function addItemToList(value) {
   */
   item.appendChild(taskContent);
 
+  // add the date picker
+  item.appendChild(datePicker);
+
   // adding the delete button element to the li
   /*
      <li>
@@ -152,4 +152,16 @@ function addItemToList(value) {
 
   // adding the list item (<li></li>) to <ul id="list"></ul>
   list.appendChild(item);
+
+  let listItem = {
+    id,
+    value,
+    isCompleted,
+    isDeleted,
+    dueDate
+  }
+
+  listState.items.push(listItem);
+
+  id++;
 }

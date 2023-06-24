@@ -16,7 +16,7 @@ header {
 
 #list {
   list-style-type: none;
-  width: 300px;
+  width: 600px;
   padding: 0px;
 }
 
@@ -37,6 +37,10 @@ header {
   margin-right: 10px;
 }
 
-.delete-button {
+.datePicker {
   margin-left: auto;
+  margin-right: 20px;
 }
+
+/* .delete-button {
+} */
